@@ -28,22 +28,31 @@ class ViewController: UIViewController {
             let bmi = weight/(height*height*0.0001)
             let shortenedBmi = String(format: "%.1f", bmi)
             var body = ""
-
+            var color = UIColor.white
+            
             switch bmi {
-            case 0..<18.5:
+            case 0.0..<18.5:
+                color = UIColor(displayP3Red: 0.0, green: 1.0, blue: 0.0, alpha:  1.0)
                 body = "저체중"
-            case 18.5..<25 :
+            case 18.5..<25.0 :
+                color = UIColor(displayP3Red: 0.0, green: 0.0, blue: 1.0, alpha:  1.0)
                 body = "정상"
-            case 25..<30 :
+            case 25.0..<30.0 :
+                color = UIColor(displayP3Red: 0.4, green: 0.0, blue: 0.0, alpha:  1.0)
                 body = "1단계 비만"
-            case 30..<40 :
+            case 30.0..<40.0 :
+                color = UIColor(displayP3Red: 0.7, green: 0.0, blue: 0.0, alpha:  1.0)
                 body = "2단계 비만"
             default :
+                color = UIColor(displayP3Red: 1.0, green: 0.0, blue: 0.0, alpha:  1.0)
                 body = "3단계 비만"
             }
 
             print("BMI:\(shortenedBmi), 판정:\(body)")
-            lblResult.text = "결과  BMI:\(shortenedBmi), 판정:\(body)"
+            lblResult.backgroundColor = color
+            lblResult.clipsToBounds = true
+            lblResult.layer.cornerRadius = 5
+            lblResult.text = "BMI:\(shortenedBmi), 판정:\(body)"
             
         }
         
@@ -53,6 +62,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func scMW(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            
+            view.backgroundColor = UIColor(displayP3Red: 231/255, green: 248/255, blue: 254/255, alpha: 1.0)
+            
+        }
+        else {
+            
+            view.backgroundColor =  UIColor(displayP3Red: 1.0, green: 230/255, blue: 231/255, alpha: 1.0)
+            
+        }
+    }
+    
 }
 
