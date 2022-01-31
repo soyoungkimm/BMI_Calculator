@@ -17,7 +17,6 @@
 Mac의 Xcode 12를 사용해서 만든 bmi 계산 앱<br>
 Swift문법이 들어감<br>
 WebKit, AVKit 등을 사용<br>
-2학년 2학기에 iOS프로그래밍 과목에서 만듦<br>
 
 
 <br><br>
