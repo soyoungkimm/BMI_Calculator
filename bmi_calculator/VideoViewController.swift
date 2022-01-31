@@ -27,5 +27,15 @@ class VideoViewController: UIViewController {
         player.play()
     }
     
-
+    @IBAction func btnPlayVideo2(_ sender: UIButton) {
+        
+        let file:String? = Bundle.main.path(forResource: "health", ofType: "mp4")
+        let url = NSURL(fileURLWithPath: file!)
+        let playerController = AVPlayerViewController()
+        let player = AVPlayer(url: url as URL)
+        playerController.player = player
+        self.present(playerController, animated: true)
+        player.play()
+    }
+    
 }
